@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PSX Portfolio Manager</title><link rel="manifest" href="manifest.json"><link rel="icon" href="assets/icons/icon-192.png">
+<meta name="theme-color" content="#0f5c4d"><link rel="stylesheet" href="css/styles.css"></head>
+<body>
+<aside id="side"><h1>PSX Portfolio</h1><nav id="nav" aria-label="Sections"></nav><p class="fine">Independent tool. Not an official PSX application. Prices are entered by you.</p></aside>
+<div id="shell"><header><button id="menu" class="btn" aria-label="Menu">Menu</button><h2 id="title"></h2>
+<input id="q" type="search" placeholder="Search symbol or company" aria-label="Search"><button id="asv" class="btn sm" hidden></button><button id="undo" class="btn sm" disabled>Undo</button><span id="save" class="saved">Saved</span><span id="net" class="fine"></span></header>
+<main id="main" tabindex="-1"></main></div>
+<dialog id="dlg"></dialog><div id="toasts" aria-live="polite"></div>
+<script src="js/calculations.js"></script><script src="js/storage.js"></script><script src="js/app.js"></script></body></html>

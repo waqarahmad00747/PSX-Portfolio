@@ -1,0 +1,77 @@
+:root{--bg:#f5f4ef;--sf:#fff;--tx:#1b2420;--mu:#5d6b64;--ln:#d8dcd5;--ac:#0f5c4d;--ac2:#fff;--pos:#12714f;--neg:#b3261e;--bar:#2f7d6a}
+[data-theme=dark]{--bg:#14181a;--sf:#1d2326;--tx:#e8ece9;--mu:#9aa8a1;--ln:#2e373b;--ac:#4cc3a3;--ac2:#06201a;--pos:#5bd6a4;--neg:#ff8a80;--bar:#4cc3a3}
+[data-theme=midnight]{--bg:#0b1630;--sf:#12214a;--tx:#e6ecff;--mu:#9fb0dd;--ln:#243562;--ac:#6ea8ff;--ac2:#06142e;--pos:#6fe3b0;--neg:#ff8f9a;--bar:#6ea8ff}
+[data-theme=emerald]{--bg:#e9f5ee;--sf:#fbfffc;--tx:#10281d;--mu:#46665a;--ln:#bddac9;--ac:#0a7a4b;--ac2:#fff;--pos:#0a7a4b;--neg:#a8201a;--bar:#1c9a66}
+[data-theme=contrast]{--bg:#000;--sf:#000;--tx:#fff;--mu:#fff;--ln:#fff;--ac:#ffe600;--ac2:#000;--pos:#00ff7f;--neg:#ff6b6b;--bar:#ffe600}
+*{box-sizing:border-box}body{margin:0;display:flex;min-height:100vh;background:var(--bg);color:var(--tx);font:15px/1.45 "Segoe UI",Roboto,system-ui,sans-serif}
+aside{width:210px;background:var(--sf);border-right:1px solid var(--ln);padding:16px;flex:none}aside h1{font-size:17px;margin:0 0 14px}
+#nav{display:grid;gap:2px}#nav button{text-align:left;background:none;border:0;color:var(--tx);padding:10px;border-radius:6px;font:inherit;cursor:pointer;min-height:44px}
+#nav button[aria-current=page]{background:var(--ac);color:var(--ac2);font-weight:600}
+#shell{flex:1;min-width:0}header{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:10px 20px;border-bottom:1px solid var(--ln);background:var(--sf);position:sticky;top:0}
+header h2{margin:0;font-size:18px;flex:1}#menu{display:none}main{padding:20px}
+:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
+.btn{background:var(--sf);color:var(--tx);border:1px solid var(--ln);border-radius:6px;padding:9px 14px;font:inherit;cursor:pointer;min-height:40px;display:inline-flex;align-items:center}
+.btn.primary{background:var(--ac);color:var(--ac2);border-color:var(--ac);font-weight:600}.btn.danger{border-color:var(--neg);color:var(--neg)}.btn.sm{min-height:32px;padding:4px 10px}
+input,select{font:inherit;padding:9px;border:1px solid var(--ln);border-radius:6px;background:var(--sf);color:var(--tx);min-height:40px}
+#q{width:220px}label{display:grid;gap:4px;margin-bottom:10px}label.inline{display:flex;align-items:center;gap:8px}input[type=file]{position:absolute;width:1px;height:1px;opacity:0;overflow:hidden;pointer-events:none}label.btn{position:relative}label.btn:focus-within{outline:3px solid var(--ac);outline-offset:2px}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px;margin-bottom:18px}
+.card{background:var(--sf);border:1px solid var(--ln);border-radius:8px;padding:12px 14px;display:grid;gap:2px}.card .lbl{color:var(--mu);font-size:13px}.card strong{font-size:20px;font-variant-numeric:tabular-nums}.card small{color:var(--mu)}
+.pos{color:var(--pos)}.neg{color:var(--neg)}.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:14px}
+.chart{background:var(--sf);border:1px solid var(--ln);border-radius:8px;padding:12px}.chart h3,main h3{margin:0 0 8px;font-size:15px}svg{width:100%;height:auto}.ct{fill:var(--tx);font-size:11px}.bar{fill:var(--bar)}.bneg{fill:var(--neg)}
+.scroll{overflow-x:auto;margin-top:12px}table{border-collapse:collapse;width:100%;background:var(--sf)}th,td{padding:8px 10px;border-bottom:1px solid var(--ln);text-align:left;white-space:nowrap}th{font-size:13px;color:var(--mu)}.n{text-align:right;font-variant-numeric:tabular-nums}
+.row{display:flex;gap:8px;margin-top:10px}.wrap{flex-wrap:wrap}.note,.fine{color:var(--mu);font-size:13px}.err{color:var(--neg);font-weight:600}.empty{color:var(--mu);padding:20px 0}
+#save{font-size:13px;color:var(--pos)}#save.saving{color:var(--mu)}#save.error{color:var(--neg);font-weight:700}
+dialog{border:1px solid var(--ln);border-radius:10px;background:var(--sf);color:var(--tx);width:min(520px,94vw);max-height:92vh}dialog::backdrop{background:#0008}
+#toasts{position:fixed;right:14px;bottom:14px;display:grid;gap:8px;z-index:9}.toast{background:var(--ac);color:var(--ac2);padding:10px 14px;border-radius:6px}.toast.bad{background:var(--neg);color:#fff}
+@media(max-width:760px){aside{position:fixed;inset:0 auto 0 0;z-index:5;transform:translateX(-100%);transition:transform .15s}aside.open{transform:none}#menu{display:inline-flex}#q{width:100%}main{padding:12px}}
+.filters{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}.row.wrap select{min-height:40px}
+.bar2{fill:var(--mu)}.sw{display:inline-block;width:10px;height:10px;margin:0 4px 0 12px}.sw.a{background:var(--mu);margin-left:0}.sw.b{background:var(--bar)}
+dialog.wide{width:min(900px,96vw)}
+.printonly{display:none}
+@media print{aside,header,.btn,#toasts,.noprint{display:none!important}.printonly{display:block!important}body{display:block;background:#fff;color:#000}.card{box-shadow:none}}
+
+/* v2 look */
+:root{--side:linear-gradient(180deg,#0f5c4d,#083a31);--sidetx:#e9f6f1;--sh:0 1px 2px #0001,0 8px 22px #0f2a2218;--r:12px}
+[data-theme=dark]{--side:linear-gradient(180deg,#183a33,#0d1a17);--sh:0 1px 2px #0006,0 8px 22px #0005}
+[data-theme=midnight]{--side:linear-gradient(180deg,#1b3a8a,#0a1230);--sh:0 1px 2px #0006,0 8px 22px #0007}
+[data-theme=emerald]{--side:linear-gradient(180deg,#0a7a4b,#064a2e);--sh:0 1px 2px #0001,0 8px 22px #0a3a2318}
+[data-theme=contrast]{--side:#000;--sidetx:#fff;--sh:none}
+body{background:var(--bg);font-family:"Segoe UI",Inter,system-ui,sans-serif}
+aside{background:var(--side);color:var(--sidetx);border:0;width:220px}aside h1{color:var(--sidetx);font-size:18px;letter-spacing:.3px;padding:4px 8px 12px}.fine{color:inherit;opacity:.7}
+#nav button{color:var(--sidetx);border-radius:10px;transition:background .12s}#nav button:hover{background:#ffffff1f}#nav button[aria-current=page]{background:#ffffff2e;color:var(--sidetx);box-shadow:inset 3px 0 0 var(--ac2,#fff)}
+header{background:var(--sf);box-shadow:var(--sh);border:0}header h2{font-size:20px}
+.card{border-radius:var(--r);box-shadow:var(--sh);border:1px solid var(--ln);border-top:3px solid var(--ac)}.card strong{font-size:22px}
+.chart,table,dialog{border-radius:var(--r);box-shadow:var(--sh)}table{overflow:hidden}tbody tr:hover{background:color-mix(in srgb,var(--ac) 8%,transparent)}th{text-transform:uppercase;letter-spacing:.4px;font-size:11px}
+.btn{border-radius:10px}.btn.primary{background:linear-gradient(135deg,var(--ac),color-mix(in srgb,var(--ac) 70%,#000));box-shadow:0 2px 8px #0003}.btn:hover{filter:brightness(1.07)}
+details{background:var(--sf);border:1px solid var(--ln);border-radius:var(--r);padding:8px 12px;margin:10px 0}summary{cursor:pointer;font-weight:600;color:var(--ac)}
+@media(max-width:760px){aside{width:80vw}}
+
+/* ---- refreshed look ---- */
+:root{--bg:#eef2f9;--sf:#fff;--tx:#14213d;--mu:#5b6b85;--ln:#dde5f2;--ac:#3b5bdb;--ac2:#fff;--pos:#08764f;--neg:#d6336c;--bar:#4c6ef5;--sh:0 6px 22px rgba(30,50,110,.09)}
+[data-theme=dark]{--bg:#0e1320;--sf:#171f31;--tx:#e8edf8;--mu:#9aa8c4;--ln:#27314a;--ac:#748ffc;--ac2:#0b1020;--pos:#4fdca0;--neg:#ff7aa8;--bar:#748ffc;--sh:0 6px 22px rgba(0,0,0,.4)}
+[data-theme=midnight]{--sh:0 6px 22px rgba(0,0,0,.35)}[data-theme=emerald]{--ac:#0a7a4b;--sh:0 6px 22px rgba(10,100,60,.12)}[data-theme=contrast]{--sh:none}
+aside{background:linear-gradient(180deg,#1c2b73,#0e1a4d);color:#eaf0ff;border:0}aside h1{display:flex;align-items:center;gap:10px;font-size:18px}
+aside h1::before{content:"";width:28px;height:28px;border-radius:9px;background:linear-gradient(135deg,#8aa4ff,#38d9a9)}
+#nav button{color:#cfd9f7;border-radius:10px;transition:background .15s}#nav button:hover{background:#ffffff18}#nav button[aria-current=page]{background:#fff;color:#1c2b73;font-weight:700}
+aside .fine{color:#9fb0e8}
+header{box-shadow:var(--sh);border:0}.card{border:0;border-top:3px solid var(--ac);border-radius:12px;box-shadow:var(--sh);transition:transform .15s}.card:hover{transform:translateY(-2px)}
+.chart{border:0;border-radius:12px;box-shadow:var(--sh)}.btn{border-radius:8px}.btn:hover{border-color:var(--ac)}
+.btn.primary{background:var(--ac);border:0;color:var(--ac2)}.btn.warn{border-color:var(--neg);color:var(--neg)}
+table{border-radius:10px;overflow:hidden;box-shadow:var(--sh)}th{background:var(--bg)}tbody tr:hover{background:var(--bg)}
+.bar2{fill:var(--mu)}.sw{display:inline-block;width:10px;height:10px;border-radius:50%;margin:0 6px 0 0}
+.donutwrap{display:flex;flex-wrap:wrap;gap:16px;align-items:center}.donut{width:250px;flex:none}.dc1{fill:var(--mu);font-size:11px}.dc2{fill:var(--tx);font-size:12px;font-weight:700}
+.slice{cursor:pointer;transition:transform .18s;transform-origin:110px 110px}.slice.on,.slice:hover,.slice:focus{transform:scale(1.06);outline:none}
+.legend{list-style:none;margin:0;padding:0;font-size:13px;flex:1;min-width:170px;max-height:250px;overflow:auto}.legend li{padding:3px 0}
+[data-theme=contrast] aside{background:#000;border-right:2px solid #fff}[data-theme=contrast] #nav button{color:#fff}[data-theme=contrast] #nav button[aria-current=page]{background:#ffe600;color:#000}[data-theme=contrast] .btn.primary{background:#ffe600;color:#000}
+@media(max-width:760px){.donut{width:200px}}
+
+/* ---- QA fixes ---- */
+/* Theme palettes must out-rank the later ":root" block (equal specificity + later position had silently turned Midnight and High-contrast into the light theme). */
+:root[data-theme=midnight]{--bg:#0b1630;--sf:#12214a;--tx:#e6ecff;--mu:#9fb0dd;--ln:#243562;--ac:#6ea8ff;--ac2:#06142e;--pos:#6fe3b0;--neg:#ff8f9a;--bar:#6ea8ff}
+:root[data-theme=emerald]{--bg:#e9f5ee;--sf:#fbfffc;--tx:#10281d;--mu:#46665a;--ln:#bddac9;--ac:#0a7a4b;--ac2:#fff;--pos:#0a7a4b;--neg:#a8201a;--bar:#1c9a66}
+:root[data-theme=contrast]{--bg:#000;--sf:#000;--tx:#fff;--mu:#fff;--ln:#fff;--ac:#ffe600;--ac2:#000;--pos:#00ff7f;--neg:#ff6b6b;--bar:#ffe600}
+[data-theme=contrast] .btn,[data-theme=contrast] input,[data-theme=contrast] select,[data-theme=contrast] .card,[data-theme=contrast] table,[data-theme=contrast] .chart,[data-theme=contrast] dialog{border:1px solid #fff}
+/* long values / long dropdown options must never push the page sideways on phones */
+.card strong{overflow-wrap:anywhere;min-width:0}.card{min-width:0}
+main select,main input{max-width:100%}label.inline{max-width:100%;flex-wrap:wrap}
+[hidden]{display:none!important}   /* author display rules (.btn) were overriding the hidden attribute: autosave button showed with no folder chosen */
